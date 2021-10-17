@@ -11,10 +11,13 @@ class InstallController extends Controller
     public function install(){
         $hasLmdUserTable = $this->checkHasLmdUserTable();
         if($hasLmdUserTable){
-            return redirect()->to('/login')->with([
-                'alert-type' => 'info',
-                'message' => 'LMD already installed!'
-            ]);
+            $singleUserLmd = LmdUser::all();
+            if(count($singleUserLmd) > 0){
+                return redirect()->to('/login')->with([
+                    'alert-type' => 'info',
+                    'message' => 'LMD already installed!'
+                ]);
+            }
         }
         $data = [
             'has_lmd_user_table' => $hasLmdUserTable
@@ -24,10 +27,13 @@ class InstallController extends Controller
     public function install_process(Request $request){
         $hasLmdUserTable = $this->checkHasLmdUserTable();
         if($hasLmdUserTable){
-            return redirect()->to('/login')->with([
-                'alert-type' => 'info',
-                'message' => 'LMD already installed!'
-            ]);
+            $singleUserLmd = LmdUser::all();
+            if(count($singleUserLmd) > 0){
+                return redirect()->to('/login')->with([
+                    'alert-type' => 'info',
+                    'message' => 'LMD already installed!'
+                ]);
+            }
         }
         $request->validate([
             'username' => 'required|unique:users,username,"regex:/\s/"',
