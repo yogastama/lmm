@@ -36,7 +36,7 @@ class InstallController extends Controller
             }
         }
         $request->validate([
-            'username' => 'required|unique:users,username,"regex:/\s/"',
+            'username' => 'required|unique:lmd_users,username,"regex:/\s/"',
             'password' => 'required|required_with:confirm_password|same:confirm_password',
             'confirm_password' => 'required'
         ]);

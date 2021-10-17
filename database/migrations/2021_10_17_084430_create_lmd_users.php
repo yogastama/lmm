@@ -13,13 +13,15 @@ class CreateLmdUsers extends Migration
      */
     public function up()
     {
-        Schema::create('lmd_users', function (Blueprint $table) {
-            $table->id();
-            $table->string('username');
-            $table->string('password');
-            $table->timestampsTz();
-            $table->softDeletes();
-        });
+        if(!Schema::hasTable('lmd_users')){
+            Schema::create('lmd_users', function (Blueprint $table) {
+                $table->id();
+                $table->string('username');
+                $table->string('password');
+                $table->timestampsTz();
+                $table->softDeletes();
+            });
+        }
     }
 
     /**

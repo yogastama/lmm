@@ -10,5 +10,6 @@ class LmdUser extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    protected $table = 'lmd_users';
     protected $guarded = [];
 }
