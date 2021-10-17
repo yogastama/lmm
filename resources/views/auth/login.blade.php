@@ -10,7 +10,7 @@
       href="assets/images/favicon.svg"
       type="image/x-icon"
     />
-    <title>LMD</title>
+    <title>Laravel Migration Management</title>
 
     <!-- ========== All CSS files linkup ========= -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />

@@ -14,7 +14,7 @@
       @if ($has_lmd_user_table)
       Register new user
       @else
-      First install
+      First install | Laravel Migration Management
       @endif
     </title>
 
